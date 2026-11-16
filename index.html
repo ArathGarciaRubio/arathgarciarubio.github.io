@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arath García — Portafolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<header>
+  <div class="contenedor barra">
+    <a href="#" class="logo">Arath García <span>/ Portafolio</span></a>
+    <nav>
+      <a href="#" data-ir="proyectos">Proyectos</a>
+      <a href="#" data-ir="sobre-mi">Sobre mí</a>
+      <a href="#" data-ir="contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Vista de inicio ===== -->
+<main id="vista-inicio">
+  <section class="contenedor intro">
+    <h1>Diseño digital y desarrollo web. <em>Marcas, interfaces y experiencias interactivas.</em></h1>
+    <p>Soy Arath García, estudiante de Diseño Digital de Medios Interactivos en la UACJ y diseñador freelance en Ciudad Juárez. Me interesa crear productos bien diseñados y técnicamente sólidos.</p>
+  </section>
+
+  <section class="contenedor" id="proyectos">
+    <div class="filtros" id="filtros"></div>
+    <div class="cuadricula" id="cuadricula"></div>
+  </section>
+
+  <section class="contenedor seccion" id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <div class="sobre-mi">
+      <div>
+        <p>Vengo del diseño gráfico y digital, y desde hace tiempo me inclino hacia el desarrollo de software, sobre todo aplicaciones web.</p>
+        <p>Mi meta es convertirme en desarrollador full stack sin perder la mirada de diseñador: que lo que construyo se vea bien y funcione bien.</p>
+      </div>
+      <div class="habilidades">
+        <h4>Diseño</h4>
+        <ul><li>Identidad visual</li><li>UI/UX</li><li>Illustrator</li><li>Photoshop</li><li>Figma</li><li>Blender</li></ul>
+        <h4>Desarrollo</h4>
+        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL / MariaDB</li><li>Supabase</li><li>C#</li></ul>
+        <h4>Idiomas</h4>
+        <ul><li>Español nativo</li><li>Inglés B2–C1</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contenedor seccion" id="contacto">
+    <h2>Contacto</h2>
+    <div class="contacto-lista">
+      <a href="mailto:arath_garu22@hotmail.com">arath_garu22@hotmail.com</a>
+      <a href="https://www.behance.net/arathgarcia1" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.linkedin.com/in/arath-arturo-garcía-rubio-a1b88341b" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Vista de un proyecto (se llena con JavaScript) ===== -->
+<main id="vista-proyecto" class="oculto">
+  <div class="contenedor proyecto" id="proyecto"></div>
+</main>
+
+<footer>
+  <div class="contenedor">© 2026 Arath Arturo García Rubio · Ciudad Juárez, Chihuahua</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
