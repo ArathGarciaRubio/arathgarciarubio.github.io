@@ -1,4 +1,13 @@
 /* =========================================================
+   AJUSTE GENERAL
+   mostrarHuecos = true  → se ven los recuadros punteados de las
+                           imágenes que aún faltan (útil al editar).
+   mostrarHuecos = false → esos recuadros no se muestran (versión pública).
+   ========================================================= */
+const mostrarHuecos = false;
+
+
+/* =========================================================
    PROYECTOS
    Para agregar un proyecto: copia un objeto completo, cambia
    el "id" (sin espacios ni acentos) y llena sus datos.
@@ -10,23 +19,83 @@
    { tipo: "texto",   titulo: "...", parrafos: ["...", "..."] }
    { tipo: "lista",   titulo: "...", items: ["...", "..."] }
    { tipo: "cita",    texto: "..." }
-   { tipo: "imagen",  src: "img/archivo.jpg", pie: "...", hueco: "texto si aún no hay imagen" }
+   { tipo: "imagen",  src: "img/archivo.jpg", pie: "...", hueco: "texto si aún no hay imagen", estrecha: true }
+                       (estrecha es opcional: muestra la imagen al ancho del texto)
    { tipo: "galeria", columnas: 2, imagenes: [ { src: "...", hueco: "..." } ] }
    { tipo: "paleta",  colores: [ { hex: "#000000", nombre: "..." } ] }
    { tipo: "video",   youtube: "ID_DEL_VIDEO" }
    { tipo: "enlaces", enlaces: [ { texto: "...", url: "..." } ] }
 
-   Si un bloque de imagen no tiene "src", se muestra un recuadro
-   punteado con el texto de "hueco" para recordar qué va ahí.
+   Portada: usa { imagen: "img/..." } o una portada generada
+   con { fondo: "#color", texto: "#color", marca: "Texto" }.
    ========================================================= */
 const proyectos = [
+  {
+    id: "agr-studio",
+    titulo: "AGR Studio",
+    categoria: "Identidad visual",
+    resumen: "Identidad visual de mi marca personal como diseñador digital: monograma, versiones, paleta, tipografía y aplicaciones.",
+    portada: { imagen: "img/agr/portada.svg" },
+    ficha: {
+      "Tipo": "Marca personal",
+      "Año": "2026",
+      "Rol": "Diseño de identidad",
+      "Entregables": "Manual, logotipos y aplicaciones"
+    },
+    bloques: [
+      { tipo: "texto", titulo: "El concepto", parrafos: [
+        "AGR son mis iniciales: Arath García Rubio. El monograma se construye con una sola regla: un trazo de 16 unidades, un radio exterior de 32, un radio interior de 16 y remates rectos.",
+        "Las curvas aportan la parte creativa y los cortes rectos, la estructura. Es el mismo equilibrio entre técnica y creatividad que quiero que se note en mi trabajo."
+      ]},
+      { tipo: "imagen", src: "img/agr/construccion.png", pie: "Construcción del monograma sobre la medida base de 16 unidades." },
+      { tipo: "cita", texto: "El acento cobre es el brazo de la G: un módulo de 16 × 16 con función estructural, no decorativa." },
+
+      { tipo: "texto", titulo: "Evolución", parrafos: [
+        "La identidad pasó por varias etapas. La primera versión usaba letras con esquinas en ángulo, que se veían sólidas en tamaño grande pero perdían claridad al reducirse."
+      ]},
+      { tipo: "imagen", src: "img/agr/proceso-v1.png", pie: "Versión 1: primera propuesta del logotipo.", estrecha: true },
+      { tipo: "texto", parrafos: [
+        "En la fase 5 comparé la versión 1 con tres alternativas en las mismas condiciones: A, conservación refinada; B, integración estructural, y C, simplificación distintiva.",
+        "Elegí la alternativa C porque se lee mejor en tamaños pequeños: en un lienzo de 32 px sus letras miden 11 px de alto, frente a 8.9 px de la versión 1, sin que se cierren los espacios interiores. Además, comparte con Manrope la construcción circular y los remates rectos."
+      ]},
+      { tipo: "imagen", src: "img/agr/proceso-fase5.png", pie: "Fase 5: comparativa de la versión 1 con las alternativas A, B y C." },
+
+      { tipo: "texto", titulo: "Sistema de versiones", parrafos: [
+        "La versión 2 se convirtió en un sistema completo: firma horizontal, vertical, compacta y monograma, cada una en color, inversa, navy, negro y blanco."
+      ]},
+      { tipo: "imagen", src: "img/agr/versiones.png", pie: "Versiones oficiales del logotipo." },
+
+      { tipo: "texto", titulo: "Color y tipografía", parrafos: [
+        "La paleta parte del navy como color principal, con slate para textos secundarios y cobre reservado solo para el módulo del monograma.",
+        "El logotipo usa Manrope 700 en «Studio» y Manrope 500 en el descriptor. Los textos complementarios, como los de este sitio, usan Inter."
+      ]},
+      { tipo: "paleta", colores: [
+        { hex: "#202A36", nombre: "Navy" },
+        { hex: "#526477", nombre: "Slate" },
+        { hex: "#C58B5A", nombre: "Copper" },
+        { hex: "#E9E7E1", nombre: "Warm Gray" },
+        { hex: "#FFFFFF", nombre: "White" }
+      ]},
+      { tipo: "imagen", src: "img/agr/fondos.png", pie: "Versión del logotipo según el fondo." },
+
+      { tipo: "texto", titulo: "Aplicaciones", parrafos: [
+        "La identidad se aplicó a una tarjeta de presentación, la portada del portafolio y la pantalla inicial de este sitio, que se construyó a partir de esa propuesta."
+      ]},
+      { tipo: "imagen", src: "img/agr/tarjeta.png", pie: "Tarjeta de presentación, 85 × 55 mm." },
+      { tipo: "imagen", src: "img/agr/portada-portafolio.png", pie: "Portada del portafolio." },
+      { tipo: "imagen", src: "img/agr/pantalla-inicial.png", pie: "Pantalla inicial del sitio web." },
+      { tipo: "enlaces", enlaces: [
+        { texto: "Ver Instagram @byAGR.Studio", url: "https://www.instagram.com/byagr.studio/" }
+      ]}
+    ]
+  },
+
   {
     id: "effix",
     titulo: "Effix",
     categoria: "Identidad visual",
     resumen: "Identidad visual completa para un negocio de personalización y papelería.",
-    color: "#B52E3A",
-    portada: { fondo: "#1F2A44", texto: "#ffffff", marca: "effix." },
+    portada: { fondo: "#1F2A44", texto: "#FFFFFF", marca: "effix." },
     ficha: {
       "Cliente": "Effix",
       "Rol": "Diseño de identidad",
@@ -44,12 +113,10 @@ const proyectos = [
         { hueco: "Construcción del logotipo" },
         { hueco: "Isotipo (punto rojo)" }
       ]},
+      /* Agrega aquí los otros tres colores de la paleta de Effix */
       { tipo: "paleta", colores: [
         { hex: "#1F2A44", nombre: "Azul marino" },
-        { hex: "#B52E3A", nombre: "Rojo acento" },
-        { hex: "#F4F4F2", nombre: "Color 3" },
-        { hex: "#9AA3B5", nombre: "Color 4" },
-        { hex: "#161616", nombre: "Color 5" }
+        { hex: "#B52E3A", nombre: "Rojo acento" }
       ]},
       { tipo: "lista", titulo: "Alcance", items: [
         "Investigación y estrategia de marca",
@@ -71,7 +138,6 @@ const proyectos = [
     titulo: "Sillage",
     categoria: "Desarrollo web",
     resumen: "Catálogo web de perfumes con filtros avanzados, lista de deseos y panel de administración.",
-    color: "#8A6A3B",
     portada: { fondo: "#15130F", texto: "#E8D9B8", marca: "Sillage" },
     ficha: {
       "Tipo": "Proyecto académico",
@@ -81,7 +147,7 @@ const proyectos = [
     },
     bloques: [
       { tipo: "texto", titulo: "El proyecto", parrafos: [
-        "Sillage es una plataforma de catálogo de perfumes pensada para explorar fragancias con filtros y conocer cada una a fondo, incluyendo su pirámide olfativa.",
+        "Sillage es una plataforma de catálogo de perfumes pensada para explorar fragancias con filtros y conocer cada una a fondo, incluida su pirámide olfativa.",
         "Es mi proyecto técnico más completo hasta ahora: diseño, frontend, base de datos y despliegue."
       ]},
       { tipo: "imagen", hueco: "Captura de la página principal del catálogo" },
@@ -111,7 +177,6 @@ const proyectos = [
     titulo: "Grano Norte",
     categoria: "Desarrollo web",
     resumen: "Sitio web para una cafetería de especialidad con estética western juarense.",
-    color: "#A0582B",
     portada: { fondo: "#2B1D14", texto: "#E9D8BE", marca: "Grano Norte" },
     ficha: {
       "Tipo": "Proyecto académico",
@@ -121,7 +186,7 @@ const proyectos = [
     },
     bloques: [
       { tipo: "texto", titulo: "El proyecto", parrafos: [
-        "Grano Norte es una marca académica basada en productos reales de café de especialidad. El sitio presenta un catálogo con origen, tueste y notas de sabor de cada café.",
+        "Grano Norte es una marca académica basada en productos reales de café de especialidad. El sitio presenta un catálogo con el origen, el tueste y las notas de sabor de cada café.",
         "Para la línea visual elegí un estilo western juarense clásico, en lugar de una propuesta minimalista, para salir de mi zona de confort."
       ]},
       { tipo: "imagen", hueco: "Captura de la página de inicio" },
@@ -142,24 +207,23 @@ const proyectos = [
   {
     id: "avex",
     titulo: "Prácticas en Avex",
-    categoria: "Redes sociales",
+    categoria: "Prácticas profesionales",
     resumen: "Gestión de redes sociales y desarrollo creativo para una consultoría de negocios.",
-    color: "#2F5D8A",
     portada: { fondo: "#E9EEF3", texto: "#1B2A3A", marca: "Avex" },
     ficha: {
-      "Empresa": "Avex",
-      "Año": "2026",
+      "Empresa": "Avex Solutions",
+      "Periodo": "2026",
       "Rol": "Redes sociales y desarrollo creativo"
     },
     bloques: [
       { tipo: "texto", titulo: "Mi papel", parrafos: [
-        "Durante mis prácticas profesionales apoyo en la gestión de redes sociales y en el desarrollo creativo, incluyendo el posicionamiento en redes de un consultor de la firma."
+        "Durante mis prácticas profesionales apoyo en la gestión de redes sociales y en el desarrollo creativo, incluido el posicionamiento en redes de un consultor de la firma."
       ]},
       { tipo: "lista", titulo: "Lo que hice", items: [
         "Análisis de referentes digitales: qué rescatar y qué evitar",
         "Guiones para una serie de reels con estructura de doble caída",
         "Propuesta de planos de cámara para una marca formal",
-        "Ideas de ganchos iniciales para captar atención"
+        "Ideas de ganchos iniciales para captar la atención"
       ]},
       { tipo: "imagen", hueco: "Ejemplo de reel o publicación" },
       { tipo: "galeria", columnas: 3, imagenes: [
@@ -175,14 +239,14 @@ const proyectos = [
     titulo: "Videojuego conceptual",
     categoria: "Videojuegos",
     resumen: "Desarrollo conceptual de un videojuego: mundo, personajes y dirección de arte.",
-    color: "#5B3FA8",
     portada: { fondo: "#120F1F", texto: "#CFC4F5", marca: "Concept" },
     ficha: {
       "Rol": "Desarrollo conceptual"
     },
     bloques: [
+      /* Pendiente: cambiar el título, el resumen y este texto por los del proyecto real */
       { tipo: "texto", titulo: "El concepto", parrafos: [
-        "Escribe aquí de qué trata el juego y cuál era la idea principal."
+        "Propuesta conceptual de un videojuego, desde la idea general hasta el desarrollo visual de sus personajes y escenarios. El proyecto completo está publicado en Behance."
       ]},
       { tipo: "imagen", hueco: "Arte principal del juego" },
       { tipo: "galeria", columnas: 2, imagenes: [
@@ -247,28 +311,37 @@ function mostrarFiltros() {
 }
 
 
-/* Dibuja las tarjetas de proyecto según el filtro elegido */
-function mostrarCuadricula() {
-  cuadricula.innerHTML = "";
-  for (const proyecto of proyectos) {
-    if (filtroActual !== "Todos" && proyecto.categoria !== filtroActual) continue;
-
-    cuadricula.innerHTML +=
-      '<a class="tarjeta" href="#' + proyecto.id + '">' +
-        '<div class="portada">' + crearPortada(proyecto) + '</div>' +
-        '<h3>' + proyecto.titulo + '</h3>' +
-        '<p>' + proyecto.categoria + '</p>' +
-      '</a>';
-  }
+/* Crea el HTML de una tarjeta de proyecto */
+function crearTarjeta(proyecto) {
+  return '<a class="tarjeta" href="#' + proyecto.id + '">' +
+           '<div class="portada">' + crearPortada(proyecto) + '</div>' +
+           '<h3>' + proyecto.titulo + '</h3>' +
+           '<p>' + proyecto.categoria + '</p>' +
+         '</a>';
 }
 
 
-/* Crea una imagen, o un recuadro punteado si todavía no hay archivo */
+/* Dibuja las tarjetas de proyecto según el filtro elegido */
+function mostrarCuadricula() {
+  let html = "";
+  for (const proyecto of proyectos) {
+    if (filtroActual !== "Todos" && proyecto.categoria !== filtroActual) continue;
+    html += crearTarjeta(proyecto);
+  }
+  cuadricula.innerHTML = html;
+}
+
+
+/* Crea una imagen. Si todavía no hay archivo, muestra un recuadro
+   punteado (solo cuando mostrarHuecos es true). */
 function crearImagen(imagen) {
   if (imagen.src) {
-    return '<img src="' + imagen.src + '" alt="' + (imagen.pie || "") + '" loading="lazy">';
+    return '<img src="' + imagen.src + '" alt="' + (imagen.pie || imagen.hueco || "") + '" loading="lazy">';
   }
-  return '<div class="hueco">' + (imagen.hueco || "Imagen pendiente") + '</div>';
+  if (mostrarHuecos) {
+    return '<div class="hueco">' + (imagen.hueco || "Imagen pendiente") + '</div>';
+  }
+  return "";
 }
 
 
@@ -292,16 +365,22 @@ function crearBloque(bloque) {
   }
 
   if (bloque.tipo === "imagen") {
-    let html = '<figure class="bloque-imagen">' + crearImagen(bloque);
-    if (bloque.pie) html += '<figcaption>' + bloque.pie + '</figcaption>';
+    const imagen = crearImagen(bloque);
+    if (imagen === "") return ""; // Sin imagen y sin hueco: no se muestra el bloque
+    // "estrecha: true" muestra la imagen al ancho del texto (720 px)
+    let clase = "bloque-imagen";
+    if (bloque.estrecha) clase += " estrecha";
+    let html = '<figure class="' + clase + '">' + imagen;
+    if (bloque.pie && bloque.src) html += '<figcaption>' + bloque.pie + '</figcaption>';
     return html + '</figure>';
   }
 
   if (bloque.tipo === "galeria") {
+    let imagenes = "";
+    for (const imagen of bloque.imagenes) imagenes += crearImagen(imagen);
+    if (imagenes === "") return ""; // Galería vacía: no se muestra
     const columnas = bloque.columnas || 2;
-    let html = '<div class="bloque-galeria" style="grid-template-columns: repeat(' + columnas + ', 1fr)">';
-    for (const imagen of bloque.imagenes) html += crearImagen(imagen);
-    return html + '</div>';
+    return '<div class="bloque-galeria" style="grid-template-columns: repeat(' + columnas + ', 1fr)">' + imagenes + '</div>';
   }
 
   if (bloque.tipo === "paleta") {
@@ -316,7 +395,7 @@ function crearBloque(bloque) {
   }
 
   if (bloque.tipo === "video") {
-    return '<div class="bloque-video"><iframe src="https://www.youtube.com/embed/' + bloque.youtube + '" allowfullscreen></iframe></div>';
+    return '<div class="bloque-video"><iframe src="https://www.youtube.com/embed/' + bloque.youtube + '" title="Video del proyecto" allowfullscreen></iframe></div>';
   }
 
   if (bloque.tipo === "enlaces") {
@@ -333,9 +412,6 @@ function crearBloque(bloque) {
 
 /* Dibuja la página completa de un proyecto */
 function mostrarProyecto(proyecto) {
-  // Color de acento propio del proyecto
-  contenedorProyecto.style.setProperty("--color-proyecto", proyecto.color);
-
   // Ficha técnica (solo los datos que existan)
   let ficha = "";
   for (const dato in proyecto.ficha) {
@@ -353,7 +429,7 @@ function mostrarProyecto(proyecto) {
   contenedorProyecto.innerHTML =
     '<button class="volver" id="volver">← Todos los proyectos</button>' +
     '<div class="proyecto-cabecera">' +
-      '<span class="categoria">' + proyecto.categoria + '</span>' +
+      '<p class="etiqueta-seccion"><span class="marcador"></span>' + proyecto.categoria + '</p>' +
       '<h1>' + proyecto.titulo + '</h1>' +
       '<p class="resumen">' + proyecto.resumen + '</p>' +
     '</div>' +
@@ -361,22 +437,18 @@ function mostrarProyecto(proyecto) {
     '<div class="proyecto-portada">' + crearPortada(proyecto) + '</div>' +
     '<div class="bloques">' + bloques + '</div>' +
     '<div class="siguiente">' +
-      '<h2>Siguiente proyecto</h2>' +
-      '<a class="tarjeta" href="#' + siguiente.id + '" style="max-width:420px">' +
-        '<div class="portada">' + crearPortada(siguiente) + '</div>' +
-        '<h3>' + siguiente.titulo + '</h3>' +
-        '<p>' + siguiente.categoria + '</p>' +
-      '</a>' +
+      '<p class="etiqueta-seccion"><span class="marcador"></span>Siguiente proyecto</p>' +
+      '<div style="max-width:420px">' + crearTarjeta(siguiente) + '</div>' +
     '</div>';
 
   document.getElementById("volver").addEventListener("click", function () {
-    location.hash = "";
+    irASeccion("proyectos");
   });
 }
 
 
 /* Decide qué vista mostrar según el #id de la dirección.
-   Ejemplo: tusitio.com/#effix abre el proyecto Effix. */
+   Ejemplo: arathgarciarubio.github.io/#effix abre el proyecto Effix. */
 function cambiarVista() {
   const id = location.hash.replace("#", "");
   const proyecto = proyectos.find(function (p) { return p.id === id; });
@@ -385,24 +457,36 @@ function cambiarVista() {
     mostrarProyecto(proyecto);
     vistaInicio.classList.add("oculto");
     vistaProyecto.classList.remove("oculto");
-    document.title = proyecto.titulo + " — Arath García";
+    document.title = proyecto.titulo + " — AGR Studio";
   } else {
     vistaProyecto.classList.add("oculto");
     vistaInicio.classList.remove("oculto");
-    document.title = "Arath García — Portafolio";
+    document.title = "AGR Studio — Portafolio de Arath García Rubio";
   }
   window.scrollTo(0, 0);
 }
 
 
-/* Menú: regresa al inicio y baja a la sección elegida */
+/* Regresa a la vista de inicio (si hace falta) y baja a una sección */
+function irASeccion(idSeccion) {
+  // El contacto está en todas las vistas, así que no hace falta cambiar de vista
+  if (idSeccion !== "contacto" && location.hash !== "") {
+    history.pushState("", "", location.pathname);
+    cambiarVista();
+  }
+  if (idSeccion === "inicio") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  document.getElementById(idSeccion).scrollIntoView({ behavior: "smooth" });
+}
+
+
+/* Enlaces del menú, el logotipo y el botón "Ver proyectos" */
 document.querySelectorAll("[data-ir]").forEach(function (enlace) {
   enlace.addEventListener("click", function (evento) {
     evento.preventDefault();
-    if (location.hash) location.hash = "";
-    setTimeout(function () {
-      document.getElementById(enlace.dataset.ir).scrollIntoView({ behavior: "smooth" });
-    }, 50);
+    irASeccion(enlace.dataset.ir);
   });
 });
 

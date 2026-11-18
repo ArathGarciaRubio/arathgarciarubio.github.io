@@ -3,20 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arath García — Portafolio</title>
+<title>AGR Studio — Portafolio de Arath García Rubio</title>
+<meta name="description" content="Portafolio de Arath García Rubio, diseñador digital y desarrollador web. AGR Studio · Creative & Digital Studio.">
+
+<!-- Iconos de la marca (03_Responsive_Icons del manual) -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#202A36">
+
+<!-- Tipografías de la marca: Manrope (titulares) e Inter (textos) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
 <header>
   <div class="contenedor barra">
-    <a href="#" class="logo">Arath García <span>/ Portafolio</span></a>
+    <a href="#" class="logo" data-ir="inicio"><img src="img/marca/agr-compacto-color.svg" alt="AGR Studio" width="153" height="40"></a>
     <nav>
       <a href="#" data-ir="proyectos">Proyectos</a>
-      <a href="#" data-ir="sobre-mi">Sobre mí</a>
+      <a href="#" data-ir="estudio">Estudio</a>
       <a href="#" data-ir="contacto">Contacto</a>
     </nav>
   </div>
@@ -24,40 +35,57 @@
 
 <!-- ===== Vista de inicio ===== -->
 <main id="vista-inicio">
-  <section class="contenedor intro">
-    <h1>Diseño digital y desarrollo web. <em>Marcas, interfaces y experiencias interactivas.</em></h1>
-    <p>Soy Arath García, estudiante de Diseño Digital de Medios Interactivos en la UACJ y diseñador freelance en Ciudad Juárez. Me interesa crear productos bien diseñados y técnicamente sólidos.</p>
-  </section>
 
-  <section class="contenedor" id="proyectos">
-    <div class="filtros" id="filtros"></div>
-    <div class="cuadricula" id="cuadricula"></div>
-  </section>
+  <!-- Pantalla inicial: el titular es el descriptor oficial de la marca -->
+  <section class="hero" id="inicio">
+    <svg class="supergrafico" viewBox="32 32 216 96" aria-hidden="true">
+      <path d="M32 128 V64 A32 32 0 0 1 64 32 A32 32 0 0 1 96 64 V128 H80 V96 H48 V128 Z M48 80 H80 V64 A16 16 0 0 0 64 48 A16 16 0 0 0 48 64 Z" fill-rule="evenodd"/>
+      <path d="M172 32 H140 A32 32 0 0 0 108 64 V96 A32 32 0 0 0 140 128 H172 V80 H140 V96 H156 V112 H140 A16 16 0 0 1 124 96 V64 A16 16 0 0 1 140 48 H172 Z" fill-rule="evenodd"/>
+      <path d="M184 128 V32 H216 A32 32 0 0 1 231.649 91.912 A48 48 0 0 1 248 128 H232 A32 32 0 0 0 200 96 V128 Z M200 48 H216 A16 16 0 0 1 232 64 A16 16 0 0 1 216 80 H200 Z" fill-rule="evenodd"/>
+    </svg>
 
-  <section class="contenedor seccion" id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <div class="sobre-mi">
-      <div>
-        <p>Vengo del diseño gráfico y digital, y desde hace tiempo me inclino hacia el desarrollo de software, sobre todo aplicaciones web.</p>
-        <p>Mi meta es convertirme en desarrollador full stack sin perder la mirada de diseñador: que lo que construyo se vea bien y funcione bien.</p>
-      </div>
-      <div class="habilidades">
-        <h4>Diseño</h4>
-        <ul><li>Identidad visual</li><li>UI/UX</li><li>Illustrator</li><li>Photoshop</li><li>Figma</li><li>Blender</li></ul>
-        <h4>Desarrollo</h4>
-        <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL / MariaDB</li><li>Supabase</li><li>C#</li></ul>
-        <h4>Idiomas</h4>
-        <ul><li>Español nativo</li><li>Inglés B2–C1</li></ul>
-      </div>
+    <div class="contenedor">
+      <h1>Creative &amp; Digital Studio</h1>
+      <ul class="disciplinas">
+        <li><span class="marcador"></span>UI/UX Design</li>
+        <li><span class="marcador"></span>Brand Identity</li>
+        <li><span class="marcador"></span>Web Development</li>
+        <li><span class="marcador"></span>3D &amp; Digital Production</li>
+      </ul>
+      <p class="presentacion">Soy Arath García Rubio, diseñador digital y desarrollador web en Ciudad Juárez. Creo marcas, interfaces y sitios que se ven bien y funcionan bien.</p>
+      <a href="#" class="boton contorno-claro" data-ir="proyectos">Ver proyectos</a>
     </div>
   </section>
 
-  <section class="contenedor seccion" id="contacto">
-    <h2>Contacto</h2>
-    <div class="contacto-lista">
-      <a href="mailto:arath_garu22@hotmail.com">arath_garu22@hotmail.com</a>
-      <a href="https://www.behance.net/arathgarcia1" target="_blank" rel="noopener">Behance</a>
-      <a href="https://www.linkedin.com/in/arath-arturo-garcía-rubio-a1b88341b" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- Proyectos -->
+  <section class="seccion" id="proyectos">
+    <div class="contenedor">
+      <p class="etiqueta-seccion"><span class="marcador"></span>Proyectos</p>
+      <div class="filtros" id="filtros"></div>
+      <div class="cuadricula" id="cuadricula"></div>
+    </div>
+  </section>
+
+  <!-- Estudio (sobre mí) -->
+  <section class="seccion calida" id="estudio">
+    <div class="contenedor">
+      <p class="etiqueta-seccion"><span class="marcador"></span>Estudio</p>
+      <div class="estudio">
+        <div>
+          <h2>Diseño con estructura, desarrollo con criterio visual.</h2>
+          <p>Estudio Diseño Digital de Medios Interactivos en la Universidad Autónoma de Ciudad Juárez y trabajo como diseñador freelance en identidad visual y medios digitales.</p>
+          <p>Vengo del diseño gráfico y me especializo cada vez más en el desarrollo web. Mi meta es ser desarrollador full stack sin dejar de pensar como diseñador.</p>
+          <p>AGR Studio es la marca con la que presento mi trabajo: mis iniciales y la forma en que entiendo cada proyecto, como un equilibrio entre técnica y creatividad.</p>
+        </div>
+        <div class="habilidades">
+          <h4>Diseño</h4>
+          <ul><li>Identidad visual</li><li>UI/UX</li><li>Adobe Illustrator</li><li>Adobe Photoshop</li><li>Figma</li><li>Blender</li></ul>
+          <h4>Desarrollo</h4>
+          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL / MariaDB</li><li>Supabase</li><li>C#</li><li>Git y GitHub</li></ul>
+          <h4>Idiomas</h4>
+          <ul><li>Español (nativo)</li><li>Inglés (B2–C1)</li></ul>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -67,8 +95,24 @@
   <div class="contenedor proyecto" id="proyecto"></div>
 </main>
 
-<footer>
-  <div class="contenedor">© 2026 Arath Arturo García Rubio · Ciudad Juárez, Chihuahua</div>
+<!-- ===== Contacto y pie de página (se muestran en todas las vistas) ===== -->
+<footer class="contacto" id="contacto">
+  <div class="contenedor">
+    <p class="etiqueta-seccion"><span class="marcador"></span>Contacto</p>
+    <h2>¿Tienes un proyecto en mente? Hablemos.</h2>
+    <ul class="contacto-lista">
+      <li><span>Correo</span><a href="mailto:arath_garu22@hotmail.com">arath_garu22@hotmail.com</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/byagr.studio/" target="_blank" rel="noopener">@byAGR.Studio</a></li>
+      <li><span>Behance</span><a href="https://www.behance.net/arathgarcia1" target="_blank" rel="noopener">behance.net/arathgarcia1</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/arath-arturo-garcía-rubio-a1b88341b" target="_blank" rel="noopener">Arath Arturo García Rubio</a></li>
+      <li><span>GitHub</span><a href="https://github.com/ArathGarciaRubio" target="_blank" rel="noopener">github.com/ArathGarciaRubio</a></li>
+    </ul>
+
+    <div class="pie">
+      <img src="img/marca/agr-compacto-reverse.svg" alt="AGR Studio" width="138" height="36">
+      <p>© 2026 Arath García Rubio · Ciudad Juárez, Chihuahua</p>
+    </div>
+  </div>
 </footer>
 
 <script src="js/main.js"></script>
