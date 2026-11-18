@@ -311,6 +311,101 @@ const proyectos = [
   },
 
   {
+    id: "sentinelgo",
+    titulo: "SentinelGo",
+    categoria: "UI/UX",
+    resumen: "Concepto de app móvil para reportar y consultar incidentes de seguridad en tiempo real, diseñado en equipo para la clase de UX.",
+    portada: { imagen: "img/sentinelgo/portada.jpg" },
+    ficha: {
+      "Tipo": "Proyecto académico en equipo",
+      "Año": "2024",
+      "Plataforma": "App móvil",
+      "Mi rol": "Concepto, logotipo, wireframes y prototipo"
+    },
+    bloques: [
+      { tipo: "texto", titulo: "El problema", parrafos: [
+        "Cuando ocurre un accidente, un siniestro o un asalto, la información llega tarde o dispersa en redes sociales. SentinelGo propone una app donde la comunidad publica y consulta esos incidentes en tiempo real, en un feed y en un mapa, para saber qué pasa a su alrededor y tomar mejores decisiones al moverse por la ciudad."
+      ]},
+      { tipo: "imagen", src: "img/sentinelgo/mockup-para-ti.jpg", pie: "Feed «Para ti» con reportes cercanos. Las fotografías son imágenes de referencia.", estrecha: true },
+
+      { tipo: "lista", titulo: "Mi papel", items: [
+        "Creación y desarrollo creativo del concepto desde cero, junto con el equipo",
+        "La mayoría de las propuestas de logotipo; la versión final la elegimos en equipo",
+        "Wireframes de todas las pantallas en Figma",
+        "Prototipo navegable: conexión de botones y navegación entre pantallas",
+        "Video demostrativo del funcionamiento de la app"
+      ]},
+
+      { tipo: "texto", titulo: "Identidad", parrafos: [
+        "El nombre y el logotipo parten de la idea de un centinela: alguien que vigila para avisar a tiempo. El símbolo combina un marcador de ubicación con la silueta de un ave, y el lema «Seguridad en tiempo real» resume la propuesta de la app."
+      ]},
+      { tipo: "galeria", columnas: 2, imagenes: [
+        { src: "img/sentinelgo/logo-claro.jpg", hueco: "Logotipo sobre fondo claro" },
+        { src: "img/sentinelgo/logo-oscuro.jpg", hueco: "Logotipo sobre fondo oscuro" }
+      ]},
+      { tipo: "galeria", columnas: 2, imagenes: [
+        { src: "img/sentinelgo/icono-claro.jpg", hueco: "Ícono de la app, versión clara" },
+        { src: "img/sentinelgo/icono-oscuro.jpg", hueco: "Ícono de la app, versión oscura" }
+      ]},
+      { tipo: "paleta", colores: [
+        { hex: "#03A678", nombre: "Verde" },
+        { hex: "#28282A", nombre: "Carbón" },
+        { hex: "#DEE7E4", nombre: "Gris claro" },
+        { hex: "#F74149", nombre: "Rojo alerta" },
+        { hex: "#D1CB27", nombre: "Amarillo aviso" }
+      ]},
+
+      { tipo: "texto", titulo: "Wireframes", parrafos: [
+        "Diseñé en Figma los wireframes de las 17 pantallas de la app para definir la estructura, la jerarquía y el flujo antes de pasar al diseño visual: acceso, modo espectador, feed, publicación, comentarios, mapa, perfil, ajustes y notificaciones."
+      ]},
+      { tipo: "galeria", columnas: 4, imagenes: [
+        { src: "img/sentinelgo/wf-iniciar-sesion.jpg", hueco: "Acceso" },
+        { src: "img/sentinelgo/wf-espectador.jpg", hueco: "Modo espectador" },
+        { src: "img/sentinelgo/wf-main-normal.jpg", hueco: "Feed" },
+        { src: "img/sentinelgo/wf-carrusel-post.jpg", hueco: "Comentarios" },
+        { src: "img/sentinelgo/wf-post.jpg", hueco: "Nueva publicación" },
+        { src: "img/sentinelgo/wf-mapa.jpg", hueco: "Mapa" },
+        { src: "img/sentinelgo/wf-perfil.jpg", hueco: "Perfil" },
+        { src: "img/sentinelgo/wf-notificaciones.jpg", hueco: "Notificaciones" }
+      ]},
+
+      { tipo: "texto", titulo: "Diseño de interfaz", parrafos: [
+        "La interfaz usa el verde de la marca para las acciones principales y el rojo y el amarillo solo para alertas."
+      ]},
+      { tipo: "lista", titulo: "Decisiones de diseño", items: [
+        "Modo espectador: permite ver los reportes sin cuenta, pero solo quien inicia sesión puede publicar, comentar o votar",
+        "Avatares en lugar de fotos de perfil, para proteger la identidad de quien reporta",
+        "Tres tipos de reporte con íconos claros: accidente vial, siniestro y robo o asalto",
+        "Mapa con los incidentes cercanos y su publicación al tocar cada marcador",
+        "Votos a favor y en contra para que la comunidad valide cada reporte"
+      ]},
+      { tipo: "galeria", columnas: 4, imagenes: [
+        { src: "img/sentinelgo/ui-index.jpg", hueco: "Pantalla de carga" },
+        { src: "img/sentinelgo/ui-log.jpg", hueco: "Acceso" },
+        { src: "img/sentinelgo/ui-log-ing.jpg", hueco: "Inicio de sesión" },
+        { src: "img/sentinelgo/ui-aviso-r.jpg", hueco: "Aviso del modo espectador" },
+        { src: "img/sentinelgo/ui-main.jpg", hueco: "Feed principal" },
+        { src: "img/sentinelgo/ui-map-post.jpg", hueco: "Mapa con publicación" },
+        { src: "img/sentinelgo/ui-post.jpg", hueco: "Nueva publicación" },
+        { src: "img/sentinelgo/ui-comment.jpg", hueco: "Comentarios" },
+        { src: "img/sentinelgo/ui-noti.jpg", hueco: "Notificaciones" },
+        { src: "img/sentinelgo/ui-perfil.jpg", hueco: "Perfil" },
+        { src: "img/sentinelgo/ui-avatar.jpg", hueco: "Selección de avatar" },
+        { src: "img/sentinelgo/ui-settings.jpg", hueco: "Configuración" }
+      ]},
+
+      { tipo: "texto", titulo: "Prototipo", parrafos: [
+        "Me encargué de conectar los botones y la navegación entre pantallas para convertir el diseño en un prototipo navegable, y de grabar el video demostrativo. Con el prototipo hicimos pruebas básicas de funcionamiento de la interfaz."
+      ]},
+      { tipo: "galeria", columnas: 3, imagenes: [
+        { src: "img/sentinelgo/mockup-perfil.jpg", hueco: "Perfil" },
+        { src: "img/sentinelgo/mockup-avatares.jpg", hueco: "Avatares" },
+        { src: "img/sentinelgo/mockup-boton.jpg", hueco: "Ícono en la pantalla de inicio" }
+      ]}
+    ]
+  },
+
+  {
     id: "tommys-tales",
     titulo: "Tommy's Tales",
     categoria: "Videojuegos",
