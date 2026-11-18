@@ -23,7 +23,7 @@ const mostrarHuecos = false;
                        (estrecha es opcional: muestra la imagen al ancho del texto)
    { tipo: "galeria", columnas: 2, imagenes: [ { src: "...", hueco: "..." } ] }
    { tipo: "paleta",  colores: [ { hex: "#000000", nombre: "..." } ] }
-   { tipo: "video",   youtube: "ID_DEL_VIDEO" }
+   { tipo: "video",   youtube: "ID_DEL_VIDEO" }  o  { tipo: "video", archivo: "img/proyecto/video.mp4", pie: "..." }
    { tipo: "enlaces", enlaces: [ { texto: "...", url: "..." } ] }
 
    Portada: usa { imagen: "img/..." } o una portada generada
@@ -320,6 +320,7 @@ const proyectos = [
       "Tipo": "Proyecto académico en equipo",
       "Año": "2024",
       "Plataforma": "App móvil",
+      "Herramientas": "Figma, Axure",
       "Mi rol": "Concepto, logotipo, wireframes y prototipo"
     },
     bloques: [
@@ -332,7 +333,7 @@ const proyectos = [
         "Creación y desarrollo creativo del concepto desde cero, junto con el equipo",
         "La mayoría de las propuestas de logotipo; la versión final la elegimos en equipo",
         "Wireframes de todas las pantallas en Figma",
-        "Prototipo navegable: conexión de botones y navegación entre pantallas",
+        "Prototipo navegable en Axure: conexión de botones y navegación entre pantallas",
         "Video demostrativo del funcionamiento de la app"
       ]},
 
@@ -395,8 +396,9 @@ const proyectos = [
       ]},
 
       { tipo: "texto", titulo: "Prototipo", parrafos: [
-        "Me encargué de conectar los botones y la navegación entre pantallas para convertir el diseño en un prototipo navegable, y de grabar el video demostrativo. Con el prototipo hicimos pruebas básicas de funcionamiento de la interfaz."
+        "En Axure me encargué de conectar los botones y la navegación entre pantallas para convertir el diseño en un prototipo navegable, y de grabar el video demostrativo. Con el prototipo hicimos pruebas básicas de funcionamiento de la interfaz."
       ]},
+      { tipo: "video", archivo: "img/sentinelgo/prototipo.mp4", poster: "img/sentinelgo/prototipo-poster.jpg", vertical: true, pie: "Recorrido por el prototipo navegable." },
       { tipo: "galeria", columnas: 3, imagenes: [
         { src: "img/sentinelgo/mockup-perfil.jpg", hueco: "Perfil" },
         { src: "img/sentinelgo/mockup-avatares.jpg", hueco: "Avatares" },
@@ -609,6 +611,18 @@ function crearBloque(bloque) {
   }
 
   if (bloque.tipo === "video") {
+    // Video guardado en el sitio (por ejemplo img/proyecto/video.mp4)
+    if (bloque.archivo) {
+      // "vertical: true" limita el ancho para videos grabados en vertical
+      let clase = "bloque-imagen";
+      if (bloque.vertical) clase += " vertical";
+      let poster = "";
+      if (bloque.poster) poster = ' poster="' + bloque.poster + '"';
+      let html = '<figure class="' + clase + '"><video src="' + bloque.archivo + '"' + poster + ' controls preload="metadata" playsinline></video>';
+      if (bloque.pie) html += '<figcaption>' + bloque.pie + '</figcaption>';
+      return html + '</figure>';
+    }
+    // Video de YouTube
     return '<div class="bloque-video"><iframe src="https://www.youtube.com/embed/' + bloque.youtube + '" title="Video del proyecto" allowfullscreen></iframe></div>';
   }
 
