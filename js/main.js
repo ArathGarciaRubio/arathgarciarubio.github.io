@@ -94,42 +94,52 @@ const proyectos = [
     id: "effix",
     titulo: "Effix",
     categoria: "Identidad visual",
-    resumen: "Identidad visual completa para un negocio de personalización y papelería.",
-    portada: { fondo: "#1F2A44", texto: "#FFFFFF", marca: "effix." },
+    resumen: "Identidad visual completa para un negocio de papelería, sublimado, grabado y bordado.",
+    portada: { imagen: "img/effix/portada.jpg" },
     ficha: {
       "Cliente": "Effix",
+      "Giro": "Papelería y personalización",
       "Rol": "Diseño de identidad",
       "Herramientas": "Illustrator, Photoshop"
     },
     bloques: [
       { tipo: "texto", titulo: "El reto", parrafos: [
-        "Effix necesitaba una marca que transmitiera precisión y cuidado en cada pieza personalizada, y que funcionara igual de bien en una tarjeta que en una lona."
+        "Effix es un negocio de papelería, sublimado, grabado y bordado. Necesitaba una marca que transmitiera eficiencia, precisión, creatividad y confianza, y que funcionara igual de bien en una tarjeta que en una lona.",
+        "El nombre une ideas como effective, efficiency y fix, así que la identidad tenía que hablar de soluciones claras, procesos bien ejecutados y resultados confiables."
       ]},
-      { tipo: "imagen", hueco: "Imagen principal: logotipo effix sobre fondo azul marino" },
-      { tipo: "texto", titulo: "Logotipo", parrafos: [
-        "Un logotipo tipográfico en minúsculas con Inter Medium, acompañado de un punto rojo como isotipo: un detalle pequeño que habla de exactitud."
+      { tipo: "imagen", src: "img/effix/logotipo.jpg", pie: "Logotipo principal.", estrecha: true },
+      { tipo: "texto", titulo: "Concepto", parrafos: [
+        "El logotipo parte de una tipografía sans serif contemporánea, de trazos limpios y proporciones equilibradas, para transmitir profesionalismo, claridad, modernidad y cercanía tecnológica.",
+        "La palabra «effix» en minúsculas le da una personalidad accesible y actual, lejos de la rigidez corporativa."
       ]},
-      { tipo: "galeria", columnas: 2, imagenes: [
-        { hueco: "Construcción del logotipo" },
-        { hueco: "Isotipo (punto rojo)" }
+      { tipo: "cita", texto: "El punto de la «i» se convierte en el elemento distintivo de la marca: un acento visual y la base para patrones y detalles." },
+      { tipo: "imagen", src: "img/effix/variantes.jpg", pie: "Variantes del logotipo y propuesta inicial de isotipo." },
+      { tipo: "texto", titulo: "Tipografía y color", parrafos: [
+        "Inter es la tipografía principal del sistema. En color, el azul marino es la base y representa confianza, estabilidad y precisión técnica; el rojo se usa de forma estratégica en el punto de la «i» para aportar energía y sensación de resultado.",
+        "El blanco y el negro sirven de soporte y permiten aplicaciones monocromáticas y una producción económica. El gris se reserva para detalles, como texto sobre fondos muy claros."
       ]},
-      /* Agrega aquí los otros tres colores de la paleta de Effix */
+      { tipo: "imagen", src: "img/effix/tipografia.jpg", pie: "Tipografía principal: Inter." },
       { tipo: "paleta", colores: [
         { hex: "#1F2A44", nombre: "Azul marino" },
-        { hex: "#B52E3A", nombre: "Rojo acento" }
+        { hex: "#B52E3A", nombre: "Rojo" },
+        { hex: "#FFFFFF", nombre: "Blanco" },
+        { hex: "#000000", nombre: "Negro" },
+        { hex: "#6E6E6E", nombre: "Gris" }
       ]},
-      { tipo: "lista", titulo: "Alcance", items: [
-        "Investigación y estrategia de marca",
-        "Identidad visual y manual de marca",
-        "Aplicaciones gráficas: tarjetas de presentación, lona y carteles publicitarios",
-        "Presentación final al cliente"
+      { tipo: "texto", titulo: "Aplicaciones", parrafos: [
+        "El sistema se llevó a piezas reales del negocio: tarjetas de presentación, productos personalizados, bordado y lonas publicitarias."
       ]},
-      { tipo: "galeria", columnas: 3, imagenes: [
-        { hueco: "Tarjetas de presentación" },
-        { hueco: "Lona" },
-        { hueco: "Cartel publicitario" }
+      { tipo: "imagen", src: "img/effix/espectacular.jpg", pie: "Espectacular con la línea «Ideas bien hechas»." },
+      { tipo: "galeria", columnas: 2, imagenes: [
+        { src: "img/effix/tarjetas.jpg", hueco: "Tarjetas de presentación" },
+        { src: "img/effix/bordado.jpg", hueco: "Logotipo bordado" }
       ]},
-      { tipo: "imagen", hueco: "Páginas del manual de marca" }
+      { tipo: "galeria", columnas: 2, imagenes: [
+        { src: "img/effix/termos.jpg", hueco: "Termos personalizados" },
+        { src: "img/effix/tarjetas-2.jpg", hueco: "Tarjetas de presentación" }
+      ]},
+      { tipo: "imagen", src: "img/effix/lona-local.jpg", pie: "Lona en fachada." },
+      { tipo: "imagen", src: "img/effix/lona-2.jpg", pie: "Lona con servicios y llamada a la acción." }
     ]
   },
 
@@ -176,30 +186,75 @@ const proyectos = [
     id: "grano-norte",
     titulo: "Grano Norte",
     categoria: "Desarrollo web",
-    resumen: "Sitio web para una cafetería de especialidad con estética western juarense.",
-    portada: { fondo: "#2B1D14", texto: "#E9D8BE", marca: "Grano Norte" },
+    resumen: "Sitio web para una marca académica de café de especialidad: catálogo con filtros, ficha de cada café y panel de administración.",
+    portada: { imagen: "img/grano-norte/portada.jpg" },
     ficha: {
       "Tipo": "Proyecto académico",
       "Año": "2026",
-      "Rol": "Diseño y desarrollo",
-      "Tecnologías": "PHP, MariaDB, JS"
+      "Rol": "Diseño y desarrollo web",
+      "Tecnologías": "HTML, CSS, JS, PHP, MariaDB"
     },
     bloques: [
-      { tipo: "texto", titulo: "El proyecto", parrafos: [
-        "Grano Norte es una marca académica basada en productos reales de café de especialidad. El sitio presenta un catálogo con el origen, el tueste y las notas de sabor de cada café.",
-        "Para la línea visual elegí un estilo western juarense clásico, en lugar de una propuesta minimalista, para salir de mi zona de confort."
+      { tipo: "texto", titulo: "El reto", parrafos: [
+        "Quería crear un sitio de café de especialidad que ayudara a elegir sin saber términos técnicos. Tenía que mostrar los cafés con datos reales, permitir filtrarlos y actualizarse desde un panel, sin tocar el código.",
+        "Grano Norte es una marca académica creada para la materia de Programación Integral de la UACJ. El sitio no vende en línea."
       ]},
-      { tipo: "imagen", hueco: "Captura de la página de inicio" },
+      { tipo: "imagen", src: "img/grano-norte/inicio.jpg", pie: "Página de inicio." },
+
+      { tipo: "texto", titulo: "Concepto visual", parrafos: [
+        "La marca parte de una identidad juarense de estilo western: una estrella, líneas dobles y un ornamento que acompañan al nombre.",
+        "En la versión final llevé ese estilo a algo más sobrio y editorial, con crema, café y cobre, para que el café y su información fueran lo principal."
+      ]},
+      { tipo: "imagen", src: "img/grano-norte/identidad.jpg", pie: "Identidad visual: paleta, tipografías y detalles de la línea western juarense." },
+
+      { tipo: "texto", titulo: "Wireframes", parrafos: [
+        "Antes de programar, diseñé wireframes de baja fidelidad de todas las pantallas, en escritorio y en móvil, para definir la estructura y el contenido de cada una."
+      ]},
+      { tipo: "imagen", src: "img/grano-norte/wireframe-inicio.jpg", pie: "Wireframe de la página de inicio en escritorio.", estrecha: true },
+      { tipo: "imagen", src: "img/grano-norte/wireframe-movil.jpg", pie: "Wireframe de la página de inicio en móvil." },
+      { tipo: "imagen", src: "img/grano-norte/wireframe-detalle.jpg", pie: "Wireframe de la ficha de café en escritorio y móvil." },
+
+      { tipo: "lista", titulo: "Funciones principales", items: [
+        "Catálogo de ocho cafés con búsqueda y filtros por país, tueste, presentación, gramaje y precio máximo",
+        "Ficha de cada café con origen, tueste, notas de sabor, variedades, métodos de preparación y precio según la presentación",
+        "«Encuentra tu café»: tres preguntas que abren el catálogo con los filtros ya aplicados",
+        "Carrusel de imágenes en el inicio, con botones de anterior, siguiente y pausa",
+        "Páginas de ubicación, con mapa de referencia académica, y de contacto",
+        "Panel de administración con inicio de sesión para crear, editar, ocultar, destacar y borrar cafés"
+      ]},
       { tipo: "galeria", columnas: 2, imagenes: [
-        { hueco: "Catálogo de cafés" },
-        { hueco: "Detalle de café" }
+        { src: "img/grano-norte/catalogo.jpg", hueco: "Catálogo con filtros" },
+        { src: "img/grano-norte/detalle.jpg", hueco: "Ficha de café" },
+        { src: "img/grano-norte/ubicacion.jpg", hueco: "Ubicación" },
+        { src: "img/grano-norte/contacto.jpg", hueco: "Contacto" }
       ]},
+      { tipo: "galeria", columnas: 4, imagenes: [
+        { src: "img/grano-norte/movil-inicio.jpg", hueco: "Inicio en móvil" },
+        { src: "img/grano-norte/movil-detalle-cafe.jpg", hueco: "Ficha de café en móvil" },
+        { src: "img/grano-norte/movil-ubicacion.jpg", hueco: "Ubicación en móvil" },
+        { src: "img/grano-norte/movil-contacto.jpg", hueco: "Contacto en móvil" }
+      ]},
+
       { tipo: "texto", titulo: "Tecnología", parrafos: [
-        "Desarrollado en local con XAMPP (PHP y MariaDB) y publicado en InfinityFree. La base de datos organiza cafés, orígenes, productores, variedades, notas sensoriales y métodos de preparación."
+        "Hice el sitio con HTML, CSS y JavaScript propios, sin Bootstrap, y con PHP y una base de datos MariaDB. Lo desarrollé en local con XAMPP y lo publiqué en InfinityFree; el código está en GitHub.",
+        "La base de datos organiza los cafés con sus orígenes, productores, variedades, notas sensoriales, métodos de preparación y presentaciones."
       ]},
-      { tipo: "imagen", hueco: "Diagrama entidad-relación" },
+      { tipo: "imagen", src: "img/grano-norte/diagrama-er.jpg", pie: "Diagrama entidad-relación de la base de datos." },
+      { tipo: "imagen", src: "img/grano-norte/panel-admin.jpg", pie: "Panel de administración." },
+
+      { tipo: "texto", titulo: "De la versión 1 a la versión final", parrafos: [
+        "Mi primera versión tenía unas 3,000 líneas de código y funciones que el proyecto no necesitaba. Apliqué el principio KISS: una sola foto por café, filtros que se aplican en el navegador y un formulario sencillo para «Encuentra tu café».",
+        "El resultado fue un código de unas 1,500 líneas, más fácil de explicar y de mantener."
+      ]},
+      { tipo: "imagen", src: "img/grano-norte/antes-despues.jpg", pie: "Comparación entre la primera versión y la versión final." },
+
+      { tipo: "texto", titulo: "Lo que aprendí", parrafos: [
+        "Aprendí a conectar una página con una base de datos mediante una API en PHP y a proteger un panel con contraseñas cifradas y sesiones.",
+        "También entendí que simplificar casi siempre mejora un proyecto, y que probar por separado el sitio local y el publicado evita sorpresas."
+      ]},
       { tipo: "enlaces", enlaces: [
-        { texto: "Ver sitio en vivo", url: "https://granonorte.infinityfreeapp.com" }
+        { texto: "Ver sitio en vivo", url: "http://granonorte.infinityfreeapp.com" },
+        { texto: "Ver código en GitHub", url: "https://github.com/ArathGarciaRubio/grano-norte-web" }
       ]}
     ]
   },
@@ -235,23 +290,65 @@ const proyectos = [
   },
 
   {
-    id: "videojuego-conceptual",
-    titulo: "Videojuego conceptual",
+    id: "tommys-tales",
+    titulo: "Tommy's Tales",
     categoria: "Videojuegos",
-    resumen: "Desarrollo conceptual de un videojuego: mundo, personajes y dirección de arte.",
-    portada: { fondo: "#120F1F", texto: "#CFC4F5", marca: "Concept" },
+    resumen: "Desarrollo conceptual de un videojuego de plataformas y acción: historia, personajes en 3D, animaciones, escenarios e interfaz.",
+    portada: { imagen: "img/tommys-tales/portada.jpg" },
     ficha: {
-      "Rol": "Desarrollo conceptual"
+      "Tipo": "Proyecto académico",
+      "Género": "Plataformas y acción",
+      "Clasificación": "E (para todos)",
+      "Rol": "Desarrollo conceptual y diseño"
     },
     bloques: [
-      /* Pendiente: cambiar el título, el resumen y este texto por los del proyecto real */
-      { tipo: "texto", titulo: "El concepto", parrafos: [
-        "Propuesta conceptual de un videojuego, desde la idea general hasta el desarrollo visual de sus personajes y escenarios. El proyecto completo está publicado en Behance."
+      { tipo: "texto", titulo: "La historia", parrafos: [
+        "Tommy's Tales sigue a Tommy, un niño creativo y soñador que empieza su sexto grado de primaria. Tommy tiene TDAH, lo que a menudo lo hace distraerse en clase y perderse en su imaginación.",
+        "En sus aventuras imaginarias lo acompañan Connie, su mejor amiga, y Robert, su maestro, que al principio parece el villano pero termina siendo un aliado."
       ]},
-      { tipo: "imagen", hueco: "Arte principal del juego" },
+
+      { tipo: "texto", titulo: "Personajes", parrafos: [
+        "Cada personaje tiene una personalidad definida y un papel claro en la historia. Los tres se modelaron en 3D con un estilo amable y caricaturesco, pensado para todo público."
+      ]},
+      { tipo: "imagen", src: "img/tommys-tales/personaje-tommy.jpg", pie: "Tommy, el protagonista." },
+      { tipo: "imagen", src: "img/tommys-tales/personaje-connie.jpg", pie: "Connie, la mejor amiga de Tommy." },
+      { tipo: "imagen", src: "img/tommys-tales/personaje-robert.jpg", pie: "Robert, el maestro." },
+      { tipo: "galeria", columnas: 3, imagenes: [
+        { src: "img/tommys-tales/vista-tommy.jpg", hueco: "Vistas de Tommy" },
+        { src: "img/tommys-tales/vista-connie.jpg", hueco: "Vistas de Connie" },
+        { src: "img/tommys-tales/vista-robert.jpg", hueco: "Vistas de Robert" }
+      ]},
+
+      { tipo: "texto", titulo: "Animación", parrafos: [
+        "Cada personaje cuenta con su propio set de animaciones, como caminar, correr, saltar, golpear y recibir daño."
+      ]},
+      { tipo: "galeria", columnas: 3, imagenes: [
+        { src: "img/tommys-tales/anim-tommy.webp", hueco: "Tommy corriendo" },
+        { src: "img/tommys-tales/anim-connie.webp", hueco: "Connie en reposo" },
+        { src: "img/tommys-tales/anim-robert.webp", hueco: "Robert caminando" }
+      ]},
+
+      { tipo: "texto", titulo: "Escenarios", parrafos: [
+        "Los niveles combinan el mundo real de Tommy, como su pueblo y su escuela, con los espacios que imagina: plataformas, laberintos y retos."
+      ]},
       { tipo: "galeria", columnas: 2, imagenes: [
-        { hueco: "Personaje" },
-        { hueco: "Escenario" }
+        { src: "img/tommys-tales/escenario-pueblo.jpg", hueco: "Pueblo" },
+        { src: "img/tommys-tales/escenario-patio.jpg", hueco: "Patio" },
+        { src: "img/tommys-tales/escenario-plataformas.jpg", hueco: "Nivel de plataformas" },
+        { src: "img/tommys-tales/escenario-laberinto.jpg", hueco: "Laberinto" }
+      ]},
+
+      { tipo: "texto", titulo: "Interfaz", parrafos: [
+        "Diseñé las pantallas del juego con un estilo cálido y legible: menú principal, pausa, inventario, logros, opciones, controles y guardado de partida."
+      ]},
+      { tipo: "imagen", src: "img/tommys-tales/menu-principal.jpg", pie: "Menú principal." },
+      { tipo: "galeria", columnas: 2, imagenes: [
+        { src: "img/tommys-tales/hud-pausa.jpg", hueco: "Pausa" },
+        { src: "img/tommys-tales/hud-inventario.jpg", hueco: "Inventario" },
+        { src: "img/tommys-tales/hud-logros.jpg", hueco: "Logros" },
+        { src: "img/tommys-tales/hud-opciones.jpg", hueco: "Opciones" },
+        { src: "img/tommys-tales/hud-controles.jpg", hueco: "Controles" },
+        { src: "img/tommys-tales/hud-guardarpartida.jpg", hueco: "Guardar partida" }
       ]},
       { tipo: "enlaces", enlaces: [
         { texto: "Ver en Behance", url: "https://www.behance.net/arathgarcia1" }
