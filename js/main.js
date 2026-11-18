@@ -147,35 +147,55 @@ const proyectos = [
     id: "sillage",
     titulo: "Sillage",
     categoria: "Desarrollo web",
-    resumen: "Catálogo web de perfumes con filtros avanzados, lista de deseos y panel de administración.",
-    portada: { fondo: "#15130F", texto: "#E8D9B8", marca: "Sillage" },
+    resumen: "Catálogo web de perfumes con filtros combinables, pirámide olfativa, lista de deseos y panel de administración.",
+    portada: { imagen: "img/sillage/portada.jpg" },
     ficha: {
-      "Tipo": "Proyecto académico",
+      "Tipo": "Proyecto académico individual",
       "Año": "2026",
-      "Rol": "Diseño y desarrollo",
-      "Tecnologías": "HTML, CSS, JS, Supabase"
+      "Rol": "Diseño, desarrollo y base de datos",
+      "Tecnologías": "HTML, CSS, JS, Supabase, Netlify"
     },
     bloques: [
-      { tipo: "texto", titulo: "El proyecto", parrafos: [
-        "Sillage es una plataforma de catálogo de perfumes pensada para explorar fragancias con filtros y conocer cada una a fondo, incluida su pirámide olfativa.",
-        "Es mi proyecto técnico más completo hasta ahora: diseño, frontend, base de datos y despliegue."
+      { tipo: "texto", titulo: "El reto", parrafos: [
+        "Quería construir un catálogo de perfumes fácil de explorar y con un panel para administrarlo sin tocar el código.",
+        "El reto principal fue organizar la información olfativa (familias, notas y ocasiones) de forma clara para quien visita el sitio."
       ]},
-      { tipo: "imagen", hueco: "Captura de la página principal del catálogo" },
-      { tipo: "lista", titulo: "Funciones", items: [
-        "Catálogo público con filtros combinables",
-        "Páginas de detalle con pirámide olfativa",
-        "Lista de deseos guardada en el navegador",
-        "Panel de administración con CRUD completo",
-        "Dos roles: visitante y administrador"
+      { tipo: "imagen", src: "img/sillage/inicio.jpg", pie: "Página de inicio con perfumes destacados." },
+
+      { tipo: "texto", titulo: "La solución", parrafos: [
+        "Diseñé Sillage, un catálogo web con filtros combinables, una ficha con pirámide olfativa para cada perfume y un panel de administración protegido con inicio de sesión.",
+        "Los datos viven en una base PostgreSQL en Supabase y el sitio está publicado en Netlify."
       ]},
-      { tipo: "galeria", columnas: 2, imagenes: [
-        { hueco: "Detalle de perfume" },
-        { hueco: "Lista de deseos" }
+      { tipo: "imagen", src: "img/sillage/identidad.jpg", pie: "Identidad: wordmark en Cormorant Garamond, paleta y tipografías." },
+      { tipo: "imagen", src: "img/sillage/wireframes.jpg", pie: "Wireframes de las pantallas principales." },
+
+      { tipo: "lista", titulo: "Funciones principales", items: [
+        "Catálogo con filtros por tipo, familia olfativa, ocasión, marca, género y precio, con etiquetas de filtros activos y orden por nombre o precio",
+        "Ficha de cada perfume con galería de imágenes y pirámide olfativa: notas de salida, corazón y fondo",
+        "Lista de deseos guardada en el navegador, con panel lateral y contador en la barra de navegación",
+        "Inicio de sesión para el administrador con Supabase Auth",
+        "Panel de administración para crear, editar y eliminar perfumes con sus notas",
+        "Gestión de marcas, tipos, familias olfativas, notas y ocasiones"
       ]},
+      { tipo: "imagen", src: "img/sillage/catalogo.jpg", pie: "Catálogo con filtros activos." },
+      { tipo: "imagen", src: "img/sillage/detalle.jpg", pie: "Ficha de perfume con pirámide olfativa." },
+      { tipo: "imagen", src: "img/sillage/lista-deseos.jpg", pie: "Lista de deseos en panel lateral." },
+
       { tipo: "texto", titulo: "Tecnología", parrafos: [
-        "Frontend en HTML, CSS y JavaScript sin frameworks, con Supabase (PostgreSQL) como backend y despliegue en Netlify."
+        "Frontend en HTML, CSS y JavaScript sin frameworks, con Supabase (PostgreSQL y Auth) como base de datos y Netlify para la publicación. Cada cambio subido a GitHub se publica automáticamente."
       ]},
-      { tipo: "imagen", hueco: "Panel de administración" },
+      { tipo: "imagen", src: "img/sillage/diagrama.jpg", pie: "Diagrama de la base de datos." },
+      { tipo: "lista", titulo: "Retos técnicos resueltos", items: [
+        "Filtros combinados que se aplican en el navegador sobre los datos, cargados una sola vez",
+        "Verificación de sesión en el panel para redirigir al inicio de sesión cuando no hay un administrador activo",
+        "Guardado de las notas por tipo (salida, corazón y fondo) en una tabla intermedia",
+        "Etiquetas de filtros activos que quitan el filtro y actualizan el catálogo"
+      ]},
+
+      { tipo: "texto", titulo: "Lo que aprendí", parrafos: [
+        "Aprendí a diseñar una base de datos relacional con relaciones de muchos a muchos y a protegerla con políticas de acceso por fila.",
+        "También practiqué la organización de un proyecto con JavaScript puro y el trabajo en sprints semanales."
+      ]},
       { tipo: "enlaces", enlaces: [
         { texto: "Ver sitio en vivo", url: "https://sillageparfum.netlify.app" }
       ]}
