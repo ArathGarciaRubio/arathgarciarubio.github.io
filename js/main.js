@@ -98,6 +98,7 @@ const proyectos = [
     portada: { imagen: "img/effix/portada.jpg" },
     ficha: {
       "Cliente": "Effix",
+      "Año": "2025",
       "Giro": "Papelería y personalización",
       "Rol": "Diseño de identidad",
       "Herramientas": "Illustrator, Photoshop"
@@ -317,6 +318,7 @@ const proyectos = [
     portada: { imagen: "img/tommys-tales/portada.jpg" },
     ficha: {
       "Tipo": "Proyecto académico",
+      "Año": "2024",
       "Género": "Plataformas y acción",
       "Clasificación": "E (para todos)",
       "Rol": "Desarrollo conceptual y diseño"
